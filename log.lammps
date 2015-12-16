@@ -43,8 +43,9 @@ read_data xinPVP10_Ag100_delPVP.data
   8 = max # of 1-3 neighbors
   20 = max # of 1-4 neighbors
   23 = max # of special neighbors
+molecule epd EPD_molecule.data
 
-pair_coeff   *   *  eam/fs Ag_O1X5.5_O2X0.55.eam.fs NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL O1 NULL NULL NULL O2 Ag Ag
+pair_coeff   *   *  eam/fs Ag_O1X5.5_O2X0.55.eam.fs NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL O1 NULL NULL NULL O2 Ag Ag NULL NULL NULL NULL NULL NULL NULL NULL O1
 pair_coeff  1*4   16*17    morse   0.00480  1.30    1.94 # HGA1, HGA2, HGA3
 pair_coeff    5   16*17    morse   0.00722  1.14    4.85 # CG2R53
 pair_coeff  6*8   16*17    morse   0.00244  1.01    4.92 # CG311
@@ -55,6 +56,12 @@ pair_coeff   12   16*17    morse   0.00480  1.30   1.94 # HCA2
 pair_coeff   13   16*17    morse   0.00448  1.06   2.13 # HCP1
 pair_coeff   14   16*17    morse   0.00216  1.26   4.99 # CC32A
 pair_coeff   15   16*17    morse   0.00217  2.09   3.43 # OC311
+pair_coeff 16*17  18*20    morse   0.00480  1.30    1.94 # HGA1, HGA2, HGA3
+pair_coeff 16*17  21       morse   0.00722  1.14    4.85 # CG2R53
+pair_coeff 16*17  22*23    morse   0.00244  1.01    4.92 # CG311
+pair_coeff 16*17  24       morse   0.00230  1.03    4.92 # CG3C52
+pair_coeff 16*17  25       morse   0.00492  1.76    3.26 # NG2R53
+pair_coeff 16*17  26       morse   0.00325  3.34    2.65 # OG2D1
 pair_coeff  1*4   16*17    zhou    0.0 1.0 1.0 10.2847 2.361 # H
 pair_coeff  5*9   16*17    zhou    0.0 1.0 1.0 36.3619 2.812 # C
 pair_coeff   10   16*17    zhou    0.0 1.0 1.0 30.4846 2.757 # N
@@ -63,126 +70,311 @@ pair_coeff   12   16*17    zhou    0.0 1.0 1.0 10.2847 2.361 # HCA2
 pair_coeff   13   16*17    zhou    0.0 1.0 1.0 10.2847 2.361 # HCP1
 pair_coeff   14   16*17    zhou    0.0 1.0 1.0 36.3619 2.812 # CC32A
 pair_coeff   15   16*17    zhou    0.0 1.0 1.0 22.9973 2.702 # OC311
-pair_coeff   1   1  lj/charmm/coul/long    0.001520  2.387609  0.001520  2.387609 #HRA2  HRA2
-pair_coeff   1   2  lj/charmm/coul/long    0.001722  2.387609  0.001722  2.387609 #HRA2  HGA1
-pair_coeff   1   3  lj/charmm/coul/long    0.001520  2.387609  0.001520  2.387609 #HRA2  HGA2
-pair_coeff   1   4  lj/charmm/coul/long    0.001257  2.387609  0.001257  2.387609 #HRA2  HGA3
-pair_coeff   1   5  lj/charmm/coul/long    0.001150  3.153782  0.001150  3.153782 #HRA2  CG2R53
-pair_coeff   1   6  lj/charmm/coul/long    0.001454  2.975602  0.000808  2.886512 #HRA2  CG311
-pair_coeff   1   7  lj/charmm/coul/long    0.001922  2.984511  0.000808  2.886512 #HRA2  CG321
-pair_coeff   1   8  lj/charmm/coul/long    0.002267  3.020147  0.000808  2.886512 #HRA2  CG331
-pair_coeff   1   9  lj/charmm/coul/long    0.001988  2.993420  0.000808  2.886512 #HRA2  CG3C52
-pair_coeff   1  10  lj/charmm/coul/long    0.003630  2.841967  0.003630  2.841967 #HRA2  NG2R53
-pair_coeff   1  11  lj/charmm/coul/long    0.002811  2.708333  0.002811  2.441063 #HRA2  OG2D1
-pair_coeff   1  12  lj/charmm/coul/long    0.001520  2.387609  0.001520  2.387609 #HRA2  HCA2
-pair_coeff   1  13  lj/charmm/coul/long    0.001739  1.393811  0.001739  1.393811 #HRA2  HCP1
-pair_coeff   1  14  lj/charmm/coul/long    0.001922  2.984511  0.000808  2.886512 #HRA2  CC32A
-pair_coeff   1  15  lj/charmm/coul/long    0.003558  2.766240  0.003558  2.766240 #HRA2  OC311
-pair_coeff   2   2  lj/charmm/coul/long    0.001950  2.387609  0.001950  2.387609 #HGA1  HGA1
-pair_coeff   2   3  lj/charmm/coul/long    0.001722  2.387609  0.001722  2.387609 #HGA1  HGA2
-pair_coeff   2   4  lj/charmm/coul/long    0.001424  2.387609  0.001424  2.387609 #HGA1  HGA3
-pair_coeff   2   5  lj/charmm/coul/long    0.001302  3.153782  0.001302  3.153782 #HGA1  CG2R53
-pair_coeff   2   6  lj/charmm/coul/long    0.001646  2.975602  0.000916  2.886512 #HGA1  CG311
-pair_coeff   2   7  lj/charmm/coul/long    0.002177  2.984511  0.000916  2.886512 #HGA1  CG321
-pair_coeff   2   8  lj/charmm/coul/long    0.002567  3.020147  0.000916  2.886512 #HGA1  CG331
-pair_coeff   2   9  lj/charmm/coul/long    0.002252  2.993420  0.000916  2.886512 #HGA1  CG3C52
-pair_coeff   2  10  lj/charmm/coul/long    0.004112  2.841967  0.004112  2.841967 #HGA1  NG2R53
-pair_coeff   2  11  lj/charmm/coul/long    0.003184  2.708333  0.003184  2.441063 #HGA1  OG2D1
-pair_coeff   2  12  lj/charmm/coul/long    0.001722  2.387609  0.001722  2.387609 #HGA1  HCA2
-pair_coeff   2  13  lj/charmm/coul/long    0.001970  1.393811  0.001970  1.393811 #HGA1  HCP1
-pair_coeff   2  14  lj/charmm/coul/long    0.002177  2.984511  0.000916  2.886512 #HGA1  CC32A
-pair_coeff   2  15  lj/charmm/coul/long    0.004030  2.766240  0.004030  2.766240 #HGA1  OC311
-pair_coeff   3   3  lj/charmm/coul/long    0.001520  2.387609  0.001520  2.387609 #HGA2  HGA2
-pair_coeff   3   4  lj/charmm/coul/long    0.001257  2.387609  0.001257  2.387609 #HGA2  HGA3
-pair_coeff   3   5  lj/charmm/coul/long    0.001150  3.153782  0.001150  3.153782 #HGA2  CG2R53
-pair_coeff   3   6  lj/charmm/coul/long    0.001454  2.975602  0.000808  2.886512 #HGA2  CG311
-pair_coeff   3   7  lj/charmm/coul/long    0.001922  2.984511  0.000808  2.886512 #HGA2  CG321
-pair_coeff   3   8  lj/charmm/coul/long    0.002267  3.020147  0.000808  2.886512 #HGA2  CG331
-pair_coeff   3   9  lj/charmm/coul/long    0.001988  2.993420  0.000808  2.886512 #HGA2  CG3C52
-pair_coeff   3  10  lj/charmm/coul/long    0.003630  2.841967  0.003630  2.841967 #HGA2  NG2R53
-pair_coeff   3  11  lj/charmm/coul/long    0.002811  2.708333  0.002811  2.441063 #HGA2  OG2D1
-pair_coeff   3  12  lj/charmm/coul/long    0.001520  2.387609  0.001520  2.387609 #HGA2  HCA2
-pair_coeff   3  13  lj/charmm/coul/long    0.001739  1.393811  0.001739  1.393811 #HGA2  HCP1
-pair_coeff   3  14  lj/charmm/coul/long    0.001922  2.984511  0.000808  2.886512 #HGA2  CC32A
-pair_coeff   3  15  lj/charmm/coul/long    0.003558  2.766240  0.003558  2.766240 #HGA2  OC311
-pair_coeff   4   4  lj/charmm/coul/long    0.001040  2.387609  0.001040  2.387609 #HGA3  HGA3
-pair_coeff   4   5  lj/charmm/coul/long    0.000951  3.153782  0.000951  3.153782 #HGA3  CG2R53
-pair_coeff   4   6  lj/charmm/coul/long    0.001202  2.975602  0.000669  2.886512 #HGA3  CG311
-pair_coeff   4   7  lj/charmm/coul/long    0.001590  2.984511  0.000669  2.886512 #HGA3  CG321
-pair_coeff   4   8  lj/charmm/coul/long    0.001875  3.020147  0.000669  2.886512 #HGA3  CG331
-pair_coeff   4   9  lj/charmm/coul/long    0.001644  2.993420  0.000669  2.886512 #HGA3  CG3C52
-pair_coeff   4  10  lj/charmm/coul/long    0.003003  2.841967  0.003003  2.841967 #HGA3  NG2R53
-pair_coeff   4  11  lj/charmm/coul/long    0.002326  2.708333  0.002326  2.441063 #HGA3  OG2D1
-pair_coeff   4  12  lj/charmm/coul/long    0.001257  2.387609  0.001257  2.387609 #HGA3  HCA2
-pair_coeff   4  13  lj/charmm/coul/long    0.001439  1.393811  0.001439  1.393811 #HGA3  HCP1
-pair_coeff   4  14  lj/charmm/coul/long    0.001590  2.984511  0.000669  2.886512 #HGA3  CC32A
-pair_coeff   4  15  lj/charmm/coul/long    0.002943  2.766240  0.002943  2.766240 #HGA3  OC311
-pair_coeff   5   5  lj/charmm/coul/long    0.000870  3.919954  0.000870  3.919954 #CG2R53CG2R53
-pair_coeff   5   6  lj/charmm/coul/long    0.001100  3.741775  0.000612  3.652685 #CG2R53CG311
-pair_coeff   5   7  lj/charmm/coul/long    0.001454  3.750684  0.000612  3.652685 #CG2R53CG321
-pair_coeff   5   8  lj/charmm/coul/long    0.001715  3.786320  0.000612  3.652685 #CG2R53CG331
-pair_coeff   5   9  lj/charmm/coul/long    0.001504  3.759593  0.000612  3.652685 #CG2R53CG3C52
-pair_coeff   5  10  lj/charmm/coul/long    0.002746  3.608140  0.002746  3.608140 #CG2R53NG2R53
-pair_coeff   5  11  lj/charmm/coul/long    0.002127  3.474505  0.002127  3.207235 #CG2R53OG2D1
-pair_coeff   5  12  lj/charmm/coul/long    0.001150  3.153782  0.001150  3.153782 #CG2R53HCA2
-pair_coeff   5  13  lj/charmm/coul/long    0.001316  2.159984  0.001316  2.159984 #CG2R53HCP1
-pair_coeff   5  14  lj/charmm/coul/long    0.001454  3.750684  0.000612  3.652685 #CG2R53CC32A
-pair_coeff   5  15  lj/charmm/coul/long    0.002692  3.532413  0.002692  3.532413 #CG2R53OC311
-pair_coeff   6   6  lj/charmm/coul/long    0.001390  3.563595  0.000430  3.385415 #CG311 CG311
-pair_coeff   6   7  lj/charmm/coul/long    0.001838  3.572504  0.000430  3.385415 #CG311 CG321
-pair_coeff   6   8  lj/charmm/coul/long    0.002168  3.608140  0.000430  3.385415 #CG311 CG331
-pair_coeff   6   9  lj/charmm/coul/long    0.001901  3.581413  0.000430  3.385415 #CG311 CG3C52
-pair_coeff   6  10  lj/charmm/coul/long    0.003471  3.429960  0.001931  3.340870 #CG311 NG2R53
-pair_coeff   6  11  lj/charmm/coul/long    0.002688  3.296326  0.001495  2.939966 #CG311 OG2D1
-pair_coeff   6  12  lj/charmm/coul/long    0.001454  2.975602  0.000808  2.886512 #CG311 HCA2
-pair_coeff   6  13  lj/charmm/coul/long    0.001663  1.981804  0.000925  1.892714 #CG311 HCP1
-pair_coeff   6  14  lj/charmm/coul/long    0.001838  3.572504  0.000430  3.385415 #CG311 CC32A
-pair_coeff   6  15  lj/charmm/coul/long    0.003403  3.354233  0.001893  3.265143 #CG311 OC311
-pair_coeff   7   7  lj/charmm/coul/long    0.002430  3.581413  0.000430  3.385415 #CG321 CG321
-pair_coeff   7   8  lj/charmm/coul/long    0.002866  3.617049  0.000430  3.385415 #CG321 CG331
-pair_coeff   7   9  lj/charmm/coul/long    0.002514  3.590322  0.000430  3.385415 #CG321 CG3C52
-pair_coeff   7  10  lj/charmm/coul/long    0.004590  3.438869  0.001931  3.340870 #CG321 NG2R53
-pair_coeff   7  11  lj/charmm/coul/long    0.003555  3.305235  0.001495  2.939966 #CG321 OG2D1
-pair_coeff   7  12  lj/charmm/coul/long    0.001922  2.984511  0.000808  2.886512 #CG321 HCA2
-pair_coeff   7  13  lj/charmm/coul/long    0.002199  1.990713  0.000925  1.892714 #CG321 HCP1
-pair_coeff   7  14  lj/charmm/coul/long    0.002430  3.581413  0.000430  3.385415 #CG321 CC32A
-pair_coeff   7  15  lj/charmm/coul/long    0.004499  3.363142  0.001893  3.265143 #CG321 OC311
-pair_coeff   8   8  lj/charmm/coul/long    0.003380  3.652685  0.000430  3.385415 #CG331 CG331
-pair_coeff   8   9  lj/charmm/coul/long    0.002964  3.625958  0.000430  3.385415 #CG331 CG3C52
-pair_coeff   8  10  lj/charmm/coul/long    0.005413  3.474505  0.001931  3.340870 #CG331 NG2R53
-pair_coeff   8  11  lj/charmm/coul/long    0.004192  3.340871  0.001495  2.939966 #CG331 OG2D1
-pair_coeff   8  12  lj/charmm/coul/long    0.002267  3.020147  0.000808  2.886512 #CG331 HCA2
-pair_coeff   8  13  lj/charmm/coul/long    0.002593  2.026349  0.000925  1.892714 #CG331 HCP1
-pair_coeff   8  14  lj/charmm/coul/long    0.002866  3.617049  0.000430  3.385415 #CG331 CC32A
-pair_coeff   8  15  lj/charmm/coul/long    0.005306  3.398778  0.001893  3.265143 #CG331 OC311
-pair_coeff   9   9  lj/charmm/coul/long    0.002600  3.599231  0.000430  3.385415 #CG3C52CG3C52
-pair_coeff   9  10  lj/charmm/coul/long    0.004748  3.447778  0.001931  3.340870 #CG3C52NG2R53
-pair_coeff   9  11  lj/charmm/coul/long    0.003677  3.314144  0.001495  2.939966 #CG3C52OG2D1
-pair_coeff   9  12  lj/charmm/coul/long    0.001988  2.993420  0.000808  2.886512 #CG3C52HCA2
-pair_coeff   9  13  lj/charmm/coul/long    0.002275  1.999622  0.000925  1.892714 #CG3C52HCP1
-pair_coeff   9  14  lj/charmm/coul/long    0.002514  3.590322  0.000430  3.385415 #CG3C52CC32A
-pair_coeff   9  15  lj/charmm/coul/long    0.004654  3.372051  0.001893  3.265143 #CG3C52OC311
-pair_coeff  10  10  lj/charmm/coul/long    0.008670  3.296325  0.008670  3.296325 #NG2R53NG2R53
-pair_coeff  10  11  lj/charmm/coul/long    0.006714  3.162691  0.006714  2.895421 #NG2R53OG2D1
-pair_coeff  10  12  lj/charmm/coul/long    0.003630  2.841967  0.003630  2.841967 #NG2R53HCA2
-pair_coeff  10  13  lj/charmm/coul/long    0.004154  1.848169  0.004154  1.848169 #NG2R53HCP1
-pair_coeff  10  14  lj/charmm/coul/long    0.004590  3.438869  0.001931  3.340870 #NG2R53CC32A
-pair_coeff  10  15  lj/charmm/coul/long    0.008498  3.220598  0.008498  3.220598 #NG2R53OC311
-pair_coeff  11  11  lj/charmm/coul/long    0.005200  3.029056  0.005200  2.494516 #OG2D1 OG2D1
-pair_coeff  11  12  lj/charmm/coul/long    0.002811  2.708333  0.002811  2.441063 #OG2D1 HCA2
-pair_coeff  11  13  lj/charmm/coul/long    0.003217  1.714535  0.003217  1.447265 #OG2D1 HCP1
-pair_coeff  11  14  lj/charmm/coul/long    0.003555  3.305235  0.001495  2.939966 #OG2D1 CC32A
-pair_coeff  11  15  lj/charmm/coul/long    0.006581  3.086964  0.006581  2.819694 #OG2D1 OC311
-pair_coeff  12  12  lj/charmm/coul/long    0.001520  2.387609  0.001520  2.387609 #HCA2  HCA2
-pair_coeff  12  13  lj/charmm/coul/long    0.001739  1.393811  0.001739  1.393811 #HCA2  HCP1
-pair_coeff  12  14  lj/charmm/coul/long    0.001922  2.984511  0.000808  2.886512 #HCA2  CC32A
-pair_coeff  12  15  lj/charmm/coul/long    0.003558  2.766240  0.003558  2.766240 #HCA2  OC311
-pair_coeff  13  13  lj/charmm/coul/long    0.001990  0.400014  0.001990  0.400014 #HCP1  HCP1
-pair_coeff  13  14  lj/charmm/coul/long    0.002199  1.990713  0.000925  1.892714 #HCP1  CC32A
-pair_coeff  13  15  lj/charmm/coul/long    0.004071  1.772443  0.004071  1.772443 #HCP1  OC311
-pair_coeff  14  14  lj/charmm/coul/long    0.002430  3.581413  0.000430  3.385415 #CC32A CC32A
-pair_coeff  14  15  lj/charmm/coul/long    0.004499  3.363142  0.001893  3.265143 #CC32A OC311
-pair_coeff  15  15  lj/charmm/coul/long    0.008330  3.144872  0.008330  3.144872 #OC311 OC311
+pair_coeff 16*17  18*20    zhou    0.0 1.0 1.0 10.2847 2.361 # H
+pair_coeff 16*17  21*24    zhou    0.0 1.0 1.0 36.3619 2.812 # C
+pair_coeff 16*17  25       zhou    0.0 1.0 1.0 30.4846 2.757 # N
+pair_coeff 16*17  26       zhou    0.0 1.0 1.0 22.9973 2.702 # O
+pair_coeff 1 1 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HRA2 # HRA2
+pair_coeff 1 2 lj/charmm/coul/long 0.001721 2.387609 0.001721 2.387609 # HRA2 # HGA1
+pair_coeff 1 3 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HRA2 # HGA2
+pair_coeff 1 4 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HRA2 # HGA3
+pair_coeff 1 5 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # HRA2 # CG2R53
+pair_coeff 1 6 lj/charmm/coul/long 0.001452 2.975602 0.000812 2.886512 # HRA2 # CG311
+pair_coeff 1 7 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HRA2 # CG321
+pair_coeff 1 8 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # HRA2 # CG331
+pair_coeff 1 9 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # HRA2 # CG3C52
+pair_coeff 1 10 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # HRA2 # NG2R53
+pair_coeff 1 11 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # HRA2 # OG2D1
+pair_coeff 1 12 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HRA2 # HCA2
+pair_coeff 1 13 lj/charmm/coul/long 0.001740 1.393811 0.001740 1.393811 # HRA2 # HCP1
+pair_coeff 1 14 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HRA2 # CC32A
+pair_coeff 1 15 lj/charmm/coul/long 0.003556 2.766240 0.003556 2.766240 # HRA2 # OC311
+pair_coeff 1 18 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HRA2 # HRA2
+pair_coeff 1 19 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HRA2 # HGA2
+pair_coeff 1 20 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HRA2 # HGA3
+pair_coeff 1 21 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # HRA2 # CG2R53
+pair_coeff 1 22 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HRA2 # CG321
+pair_coeff 1 23 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # HRA2 # CG331
+pair_coeff 1 24 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # HRA2 # CG3C52
+pair_coeff 1 25 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # HRA2 # NG2R53
+pair_coeff 1 26 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # HRA2 # OG2D1
+pair_coeff 2 2 lj/charmm/coul/long 0.001951 2.387609 0.001951 2.387609 # HGA1 # HGA1
+pair_coeff 2 3 lj/charmm/coul/long 0.001721 2.387609 0.001721 2.387609 # HGA1 # HGA2
+pair_coeff 2 4 lj/charmm/coul/long 0.001425 2.387609 0.001425 2.387609 # HGA1 # HGA3
+pair_coeff 2 5 lj/charmm/coul/long 0.001301 3.153782 0.001301 3.153782 # HGA1 # CG2R53
+pair_coeff 2 6 lj/charmm/coul/long 0.001646 2.975602 0.000920 2.886512 # HGA1 # CG311
+pair_coeff 2 7 lj/charmm/coul/long 0.002176 2.984511 0.000920 2.886512 # HGA1 # CG321
+pair_coeff 2 8 lj/charmm/coul/long 0.002569 3.020147 0.000920 2.886512 # HGA1 # CG331
+pair_coeff 2 9 lj/charmm/coul/long 0.002253 2.993420 0.000920 2.886512 # HGA1 # CG3C52
+pair_coeff 2 10 lj/charmm/coul/long 0.004114 2.841967 0.004114 2.841967 # HGA1 # NG2R53
+pair_coeff 2 11 lj/charmm/coul/long 0.003186 2.708333 0.003186 2.441063 # HGA1 # OG2D1
+pair_coeff 2 12 lj/charmm/coul/long 0.001721 2.387609 0.001721 2.387609 # HGA1 # HCA2
+pair_coeff 2 13 lj/charmm/coul/long 0.001973 1.393811 0.001973 1.393811 # HGA1 # HCP1
+pair_coeff 2 14 lj/charmm/coul/long 0.002176 2.984511 0.000920 2.886512 # HGA1 # CC32A
+pair_coeff 2 15 lj/charmm/coul/long 0.004031 2.766240 0.004031 2.766240 # HGA1 # OC311
+pair_coeff 2 18 lj/charmm/coul/long 0.001721 2.387609 0.001721 2.387609 # HGA1 # HRA2
+pair_coeff 2 19 lj/charmm/coul/long 0.001721 2.387609 0.001721 2.387609 # HGA1 # HGA2
+pair_coeff 2 20 lj/charmm/coul/long 0.001425 2.387609 0.001425 2.387609 # HGA1 # HGA3
+pair_coeff 2 21 lj/charmm/coul/long 0.001301 3.153782 0.001301 3.153782 # HGA1 # CG2R53
+pair_coeff 2 22 lj/charmm/coul/long 0.002176 2.984511 0.000920 2.886512 # HGA1 # CG321
+pair_coeff 2 23 lj/charmm/coul/long 0.002569 3.020147 0.000920 2.886512 # HGA1 # CG331
+pair_coeff 2 24 lj/charmm/coul/long 0.002253 2.993420 0.000920 2.886512 # HGA1 # CG3C52
+pair_coeff 2 25 lj/charmm/coul/long 0.004114 2.841967 0.004114 2.841967 # HGA1 # NG2R53
+pair_coeff 2 26 lj/charmm/coul/long 0.003186 2.708333 0.003186 2.441063 # HGA1 # OG2D1
+pair_coeff 3 3 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HGA2 # HGA2
+pair_coeff 3 4 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HGA2 # HGA3
+pair_coeff 3 5 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # HGA2 # CG2R53
+pair_coeff 3 6 lj/charmm/coul/long 0.001452 2.975602 0.000812 2.886512 # HGA2 # CG311
+pair_coeff 3 7 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HGA2 # CG321
+pair_coeff 3 8 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # HGA2 # CG331
+pair_coeff 3 9 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # HGA2 # CG3C52
+pair_coeff 3 10 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # HGA2 # NG2R53
+pair_coeff 3 11 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # HGA2 # OG2D1
+pair_coeff 3 12 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HGA2 # HCA2
+pair_coeff 3 13 lj/charmm/coul/long 0.001740 1.393811 0.001740 1.393811 # HGA2 # HCP1
+pair_coeff 3 14 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HGA2 # CC32A
+pair_coeff 3 15 lj/charmm/coul/long 0.003556 2.766240 0.003556 2.766240 # HGA2 # OC311
+pair_coeff 3 18 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HGA2 # HRA2
+pair_coeff 3 19 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HGA2 # HGA2
+pair_coeff 3 20 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HGA2 # HGA3
+pair_coeff 3 21 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # HGA2 # CG2R53
+pair_coeff 3 22 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HGA2 # CG321
+pair_coeff 3 23 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # HGA2 # CG331
+pair_coeff 3 24 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # HGA2 # CG3C52
+pair_coeff 3 25 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # HGA2 # NG2R53
+pair_coeff 3 26 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # HGA2 # OG2D1
+pair_coeff 4 4 lj/charmm/coul/long 0.001041 2.387609 0.001041 2.387609 # HGA3 # HGA3
+pair_coeff 4 5 lj/charmm/coul/long 0.000950 3.153782 0.000950 3.153782 # HGA3 # CG2R53
+pair_coeff 4 6 lj/charmm/coul/long 0.001202 2.975602 0.000672 2.886512 # HGA3 # CG311
+pair_coeff 4 7 lj/charmm/coul/long 0.001590 2.984511 0.000672 2.886512 # HGA3 # CG321
+pair_coeff 4 8 lj/charmm/coul/long 0.001876 3.020147 0.000672 2.886512 # HGA3 # CG331
+pair_coeff 4 9 lj/charmm/coul/long 0.001646 2.993420 0.000672 2.886512 # HGA3 # CG3C52
+pair_coeff 4 10 lj/charmm/coul/long 0.003005 2.841967 0.003005 2.841967 # HGA3 # NG2R53
+pair_coeff 4 11 lj/charmm/coul/long 0.002328 2.708333 0.002328 2.441063 # HGA3 # OG2D1
+pair_coeff 4 12 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HGA3 # HCA2
+pair_coeff 4 13 lj/charmm/coul/long 0.001441 1.393811 0.001441 1.393811 # HGA3 # HCP1
+pair_coeff 4 14 lj/charmm/coul/long 0.001590 2.984511 0.000672 2.886512 # HGA3 # CC32A
+pair_coeff 4 15 lj/charmm/coul/long 0.002945 2.766240 0.002945 2.766240 # HGA3 # OC311
+pair_coeff 4 18 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HGA3 # HRA2
+pair_coeff 4 19 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HGA3 # HGA2
+pair_coeff 4 20 lj/charmm/coul/long 0.001041 2.387609 0.001041 2.387609 # HGA3 # HGA3
+pair_coeff 4 21 lj/charmm/coul/long 0.000950 3.153782 0.000950 3.153782 # HGA3 # CG2R53
+pair_coeff 4 22 lj/charmm/coul/long 0.001590 2.984511 0.000672 2.886512 # HGA3 # CG321
+pair_coeff 4 23 lj/charmm/coul/long 0.001876 3.020147 0.000672 2.886512 # HGA3 # CG331
+pair_coeff 4 24 lj/charmm/coul/long 0.001646 2.993420 0.000672 2.886512 # HGA3 # CG3C52
+pair_coeff 4 25 lj/charmm/coul/long 0.003005 2.841967 0.003005 2.841967 # HGA3 # NG2R53
+pair_coeff 4 26 lj/charmm/coul/long 0.002328 2.708333 0.002328 2.441063 # HGA3 # OG2D1
+pair_coeff 5 5 lj/charmm/coul/long 0.000867 3.919954 0.000867 3.919954 # CG2R53 # CG2R53
+pair_coeff 5 6 lj/charmm/coul/long 0.001097 3.741775 0.000613 3.652685 # CG2R53 # CG311
+pair_coeff 5 7 lj/charmm/coul/long 0.001451 3.750684 0.000613 3.652685 # CG2R53 # CG321
+pair_coeff 5 8 lj/charmm/coul/long 0.001712 3.786320 0.000613 3.652685 # CG2R53 # CG331
+pair_coeff 5 9 lj/charmm/coul/long 0.001502 3.759593 0.000613 3.652685 # CG2R53 # CG3C52
+pair_coeff 5 10 lj/charmm/coul/long 0.002742 3.608140 0.002742 3.608140 # CG2R53 # NG2R53
+pair_coeff 5 11 lj/charmm/coul/long 0.002124 3.474505 0.002124 3.207235 # CG2R53 # OG2D1
+pair_coeff 5 12 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # CG2R53 # HCA2
+pair_coeff 5 13 lj/charmm/coul/long 0.001315 2.159984 0.001315 2.159984 # CG2R53 # HCP1
+pair_coeff 5 14 lj/charmm/coul/long 0.001451 3.750684 0.000613 3.652685 # CG2R53 # CC32A
+pair_coeff 5 15 lj/charmm/coul/long 0.002687 3.532413 0.002687 3.532413 # CG2R53 # OC311
+pair_coeff 5 18 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # CG2R53 # HRA2
+pair_coeff 5 19 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # CG2R53 # HGA2
+pair_coeff 5 20 lj/charmm/coul/long 0.000950 3.153782 0.000950 3.153782 # CG2R53 # HGA3
+pair_coeff 5 21 lj/charmm/coul/long 0.000867 3.919954 0.000867 3.919954 # CG2R53 # CG2R53
+pair_coeff 5 22 lj/charmm/coul/long 0.001451 3.750684 0.000613 3.652685 # CG2R53 # CG321
+pair_coeff 5 23 lj/charmm/coul/long 0.001712 3.786320 0.000613 3.652685 # CG2R53 # CG331
+pair_coeff 5 24 lj/charmm/coul/long 0.001502 3.759593 0.000613 3.652685 # CG2R53 # CG3C52
+pair_coeff 5 25 lj/charmm/coul/long 0.002742 3.608140 0.002742 3.608140 # CG2R53 # NG2R53
+pair_coeff 5 26 lj/charmm/coul/long 0.002124 3.474505 0.002124 3.207235 # CG2R53 # OG2D1
+pair_coeff 6 6 lj/charmm/coul/long 0.001388 3.563595 0.000434 3.385415 # CG311 # CG311
+pair_coeff 6 7 lj/charmm/coul/long 0.001836 3.572504 0.000434 3.385415 # CG311 # CG321
+pair_coeff 6 8 lj/charmm/coul/long 0.002167 3.608140 0.000434 3.385415 # CG311 # CG331
+pair_coeff 6 9 lj/charmm/coul/long 0.001900 3.581413 0.000434 3.385415 # CG311 # CG3C52
+pair_coeff 6 10 lj/charmm/coul/long 0.003470 3.429960 0.001940 3.340870 # CG311 # NG2R53
+pair_coeff 6 11 lj/charmm/coul/long 0.002688 3.296326 0.001503 2.939966 # CG311 # OG2D1
+pair_coeff 6 12 lj/charmm/coul/long 0.001452 2.975602 0.000812 2.886512 # CG311 # HCA2
+pair_coeff 6 13 lj/charmm/coul/long 0.001664 1.981804 0.000930 1.892714 # CG311 # HCP1
+pair_coeff 6 14 lj/charmm/coul/long 0.001836 3.572504 0.000434 3.385415 # CG311 # CC32A
+pair_coeff 6 15 lj/charmm/coul/long 0.003400 3.354233 0.001901 3.265143 # CG311 # OC311
+pair_coeff 6 18 lj/charmm/coul/long 0.001452 2.975602 0.000812 2.886512 # CG311 # HRA2
+pair_coeff 6 19 lj/charmm/coul/long 0.001452 2.975602 0.000812 2.886512 # CG311 # HGA2
+pair_coeff 6 20 lj/charmm/coul/long 0.001202 2.975602 0.000672 2.886512 # CG311 # HGA3
+pair_coeff 6 21 lj/charmm/coul/long 0.001097 3.741775 0.000613 3.652685 # CG311 # CG2R53
+pair_coeff 6 22 lj/charmm/coul/long 0.001836 3.572504 0.000434 3.385415 # CG311 # CG321
+pair_coeff 6 23 lj/charmm/coul/long 0.002167 3.608140 0.000434 3.385415 # CG311 # CG331
+pair_coeff 6 24 lj/charmm/coul/long 0.001900 3.581413 0.000434 3.385415 # CG311 # CG3C52
+pair_coeff 6 25 lj/charmm/coul/long 0.003470 3.429960 0.001940 3.340870 # CG311 # NG2R53
+pair_coeff 6 26 lj/charmm/coul/long 0.002688 3.296326 0.001503 2.939966 # CG311 # OG2D1
+pair_coeff 7 7 lj/charmm/coul/long 0.002428 3.581413 0.000434 3.385415 # CG321 # CG321
+pair_coeff 7 8 lj/charmm/coul/long 0.002866 3.617049 0.000434 3.385415 # CG321 # CG331
+pair_coeff 7 9 lj/charmm/coul/long 0.002513 3.590322 0.000434 3.385415 # CG321 # CG3C52
+pair_coeff 7 10 lj/charmm/coul/long 0.004589 3.438869 0.001940 3.340870 # CG321 # NG2R53
+pair_coeff 7 11 lj/charmm/coul/long 0.003555 3.305235 0.001503 2.939966 # CG321 # OG2D1
+pair_coeff 7 12 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # CG321 # HCA2
+pair_coeff 7 13 lj/charmm/coul/long 0.002201 1.990714 0.000930 1.892714 # CG321 # HCP1
+pair_coeff 7 14 lj/charmm/coul/long 0.002428 3.581413 0.000434 3.385415 # CG321 # CC32A
+pair_coeff 7 15 lj/charmm/coul/long 0.004497 3.363142 0.001901 3.265143 # CG321 # OC311
+pair_coeff 7 18 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # CG321 # HRA2
+pair_coeff 7 19 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # CG321 # HGA2
+pair_coeff 7 20 lj/charmm/coul/long 0.001590 2.984511 0.000672 2.886512 # CG321 # HGA3
+pair_coeff 7 21 lj/charmm/coul/long 0.001451 3.750684 0.000613 3.652685 # CG321 # CG2R53
+pair_coeff 7 22 lj/charmm/coul/long 0.002428 3.581413 0.000434 3.385415 # CG321 # CG321
+pair_coeff 7 23 lj/charmm/coul/long 0.002866 3.617049 0.000434 3.385415 # CG321 # CG331
+pair_coeff 7 24 lj/charmm/coul/long 0.002513 3.590322 0.000434 3.385415 # CG321 # CG3C52
+pair_coeff 7 25 lj/charmm/coul/long 0.004589 3.438869 0.001940 3.340870 # CG321 # NG2R53
+pair_coeff 7 26 lj/charmm/coul/long 0.003555 3.305235 0.001503 2.939966 # CG321 # OG2D1
+pair_coeff 8 8 lj/charmm/coul/long 0.003382 3.652685 0.000434 3.385415 # CG331 # CG331
+pair_coeff 8 9 lj/charmm/coul/long 0.002966 3.625958 0.000434 3.385415 # CG331 # CG3C52
+pair_coeff 8 10 lj/charmm/coul/long 0.005416 3.474505 0.001940 3.340870 # CG331 # NG2R53
+pair_coeff 8 11 lj/charmm/coul/long 0.004195 3.340871 0.001503 2.939966 # CG331 # OG2D1
+pair_coeff 8 12 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # CG331 # HCA2
+pair_coeff 8 13 lj/charmm/coul/long 0.002598 2.026349 0.000930 1.892714 # CG331 # HCP1
+pair_coeff 8 14 lj/charmm/coul/long 0.002866 3.617049 0.000434 3.385415 # CG331 # CC32A
+pair_coeff 8 15 lj/charmm/coul/long 0.005308 3.398778 0.001901 3.265143 # CG331 # OC311
+pair_coeff 8 18 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # CG331 # HRA2
+pair_coeff 8 19 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # CG331 # HGA2
+pair_coeff 8 20 lj/charmm/coul/long 0.001876 3.020147 0.000672 2.886512 # CG331 # HGA3
+pair_coeff 8 21 lj/charmm/coul/long 0.001712 3.786320 0.000613 3.652685 # CG331 # CG2R53
+pair_coeff 8 22 lj/charmm/coul/long 0.002866 3.617049 0.000434 3.385415 # CG331 # CG321
+pair_coeff 8 23 lj/charmm/coul/long 0.003382 3.652685 0.000434 3.385415 # CG331 # CG331
+pair_coeff 8 24 lj/charmm/coul/long 0.002966 3.625958 0.000434 3.385415 # CG331 # CG3C52
+pair_coeff 8 25 lj/charmm/coul/long 0.005416 3.474505 0.001940 3.340870 # CG331 # NG2R53
+pair_coeff 8 26 lj/charmm/coul/long 0.004195 3.340871 0.001503 2.939966 # CG331 # OG2D1
+pair_coeff 9 9 lj/charmm/coul/long 0.002602 3.599231 0.000434 3.385415 # CG3C52 # CG3C52
+pair_coeff 9 10 lj/charmm/coul/long 0.004750 3.447778 0.001940 3.340870 # CG3C52 # NG2R53
+pair_coeff 9 11 lj/charmm/coul/long 0.003680 3.314144 0.001503 2.939966 # CG3C52 # OG2D1
+pair_coeff 9 12 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # CG3C52 # HCA2
+pair_coeff 9 13 lj/charmm/coul/long 0.002278 1.999623 0.000930 1.892714 # CG3C52 # HCP1
+pair_coeff 9 14 lj/charmm/coul/long 0.002513 3.590322 0.000434 3.385415 # CG3C52 # CC32A
+pair_coeff 9 15 lj/charmm/coul/long 0.004656 3.372051 0.001901 3.265143 # CG3C52 # OC311
+pair_coeff 9 18 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # CG3C52 # HRA2
+pair_coeff 9 19 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # CG3C52 # HGA2
+pair_coeff 9 20 lj/charmm/coul/long 0.001646 2.993420 0.000672 2.886512 # CG3C52 # HGA3
+pair_coeff 9 21 lj/charmm/coul/long 0.001502 3.759593 0.000613 3.652685 # CG3C52 # CG2R53
+pair_coeff 9 22 lj/charmm/coul/long 0.002513 3.590322 0.000434 3.385415 # CG3C52 # CG321
+pair_coeff 9 23 lj/charmm/coul/long 0.002966 3.625958 0.000434 3.385415 # CG3C52 # CG331
+pair_coeff 9 24 lj/charmm/coul/long 0.002602 3.599231 0.000434 3.385415 # CG3C52 # CG3C52
+pair_coeff 9 25 lj/charmm/coul/long 0.004750 3.447778 0.001940 3.340870 # CG3C52 # NG2R53
+pair_coeff 9 26 lj/charmm/coul/long 0.003680 3.314144 0.001503 2.939966 # CG3C52 # OG2D1
+pair_coeff 10 10 lj/charmm/coul/long 0.008673 3.296325 0.008673 3.296325 # NG2R53 # NG2R53
+pair_coeff 10 11 lj/charmm/coul/long 0.006718 3.162691 0.006718 2.895421 # NG2R53 # OG2D1
+pair_coeff 10 12 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # NG2R53 # HCA2
+pair_coeff 10 13 lj/charmm/coul/long 0.004160 1.848170 0.004160 1.848169 # NG2R53 # HCP1
+pair_coeff 10 14 lj/charmm/coul/long 0.004589 3.438869 0.001940 3.340870 # NG2R53 # CC32A
+pair_coeff 10 15 lj/charmm/coul/long 0.008500 3.220598 0.008500 3.220598 # NG2R53 # OC311
+pair_coeff 10 18 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # NG2R53 # HRA2
+pair_coeff 10 19 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # NG2R53 # HGA2
+pair_coeff 10 20 lj/charmm/coul/long 0.003005 2.841967 0.003005 2.841967 # NG2R53 # HGA3
+pair_coeff 10 21 lj/charmm/coul/long 0.002742 3.608140 0.002742 3.608140 # NG2R53 # CG2R53
+pair_coeff 10 22 lj/charmm/coul/long 0.004589 3.438869 0.001940 3.340870 # NG2R53 # CG321
+pair_coeff 10 23 lj/charmm/coul/long 0.005416 3.474505 0.001940 3.340870 # NG2R53 # CG331
+pair_coeff 10 24 lj/charmm/coul/long 0.004750 3.447778 0.001940 3.340870 # NG2R53 # CG3C52
+pair_coeff 10 25 lj/charmm/coul/long 0.008673 3.296325 0.008673 3.296325 # NG2R53 # NG2R53
+pair_coeff 10 26 lj/charmm/coul/long 0.006718 3.162691 0.006718 2.895421 # NG2R53 # OG2D1
+pair_coeff 11 11 lj/charmm/coul/long 0.005204 3.029056 0.005204 2.494516 # OG2D1 # OG2D1
+pair_coeff 11 12 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # OG2D1 # HCA2
+pair_coeff 11 13 lj/charmm/coul/long 0.003222 1.714535 0.003222 1.447265 # OG2D1 # HCP1
+pair_coeff 11 14 lj/charmm/coul/long 0.003555 3.305235 0.001503 2.939966 # OG2D1 # CC32A
+pair_coeff 11 15 lj/charmm/coul/long 0.006584 3.086964 0.006584 2.819694 # OG2D1 # OC311
+pair_coeff 11 18 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # OG2D1 # HRA2
+pair_coeff 11 19 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # OG2D1 # HGA2
+pair_coeff 11 20 lj/charmm/coul/long 0.002328 2.708333 0.002328 2.441063 # OG2D1 # HGA3
+pair_coeff 11 21 lj/charmm/coul/long 0.002124 3.474505 0.002124 3.207235 # OG2D1 # CG2R53
+pair_coeff 11 22 lj/charmm/coul/long 0.003555 3.305235 0.001503 2.939966 # OG2D1 # CG321
+pair_coeff 11 23 lj/charmm/coul/long 0.004195 3.340871 0.001503 2.939966 # OG2D1 # CG331
+pair_coeff 11 24 lj/charmm/coul/long 0.003680 3.314144 0.001503 2.939966 # OG2D1 # CG3C52
+pair_coeff 11 25 lj/charmm/coul/long 0.006718 3.162691 0.006718 2.895421 # OG2D1 # NG2R53
+pair_coeff 11 26 lj/charmm/coul/long 0.005204 3.029056 0.005204 2.494516 # OG2D1 # OG2D1
+pair_coeff 12 12 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HCA2 # HCA2
+pair_coeff 12 13 lj/charmm/coul/long 0.001740 1.393811 0.001740 1.393811 # HCA2 # HCP1
+pair_coeff 12 14 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HCA2 # CC32A
+pair_coeff 12 15 lj/charmm/coul/long 0.003556 2.766240 0.003556 2.766240 # HCA2 # OC311
+pair_coeff 12 18 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HCA2 # HRA2
+pair_coeff 12 19 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HCA2 # HGA2
+pair_coeff 12 20 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HCA2 # HGA3
+pair_coeff 12 21 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # HCA2 # CG2R53
+pair_coeff 12 22 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HCA2 # CG321
+pair_coeff 12 23 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # HCA2 # CG331
+pair_coeff 12 24 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # HCA2 # CG3C52
+pair_coeff 12 25 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # HCA2 # NG2R53
+pair_coeff 12 26 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # HCA2 # OG2D1
+pair_coeff 13 13 lj/charmm/coul/long 0.001995 0.400014 0.001995 0.400014 # HCP1 # HCP1
+pair_coeff 13 14 lj/charmm/coul/long 0.002201 1.990714 0.000930 1.892714 # HCP1 # CC32A
+pair_coeff 13 15 lj/charmm/coul/long 0.004077 1.772443 0.004077 1.772443 # HCP1 # OC311
+pair_coeff 13 18 lj/charmm/coul/long 0.001740 1.393811 0.001740 1.393811 # HCP1 # HRA2
+pair_coeff 13 19 lj/charmm/coul/long 0.001740 1.393811 0.001740 1.393811 # HCP1 # HGA2
+pair_coeff 13 20 lj/charmm/coul/long 0.001441 1.393811 0.001441 1.393811 # HCP1 # HGA3
+pair_coeff 13 21 lj/charmm/coul/long 0.001315 2.159984 0.001315 2.159984 # HCP1 # CG2R53
+pair_coeff 13 22 lj/charmm/coul/long 0.002201 1.990714 0.000930 1.892714 # HCP1 # CG321
+pair_coeff 13 23 lj/charmm/coul/long 0.002598 2.026349 0.000930 1.892714 # HCP1 # CG331
+pair_coeff 13 24 lj/charmm/coul/long 0.002278 1.999623 0.000930 1.892714 # HCP1 # CG3C52
+pair_coeff 13 25 lj/charmm/coul/long 0.004160 1.848170 0.004160 1.848169 # HCP1 # NG2R53
+pair_coeff 13 26 lj/charmm/coul/long 0.003222 1.714535 0.003222 1.447265 # HCP1 # OG2D1
+pair_coeff 14 14 lj/charmm/coul/long 0.002428 3.581413 0.000434 3.385415 # CC32A # CC32A
+pair_coeff 14 15 lj/charmm/coul/long 0.004497 3.363142 0.001901 3.265143 # CC32A # OC311
+pair_coeff 14 18 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # CC32A # HRA2
+pair_coeff 14 19 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # CC32A # HGA2
+pair_coeff 14 20 lj/charmm/coul/long 0.001590 2.984511 0.000672 2.886512 # CC32A # HGA3
+pair_coeff 14 21 lj/charmm/coul/long 0.001451 3.750684 0.000613 3.652685 # CC32A # CG2R53
+pair_coeff 14 22 lj/charmm/coul/long 0.002428 3.581413 0.000434 3.385415 # CC32A # CG321
+pair_coeff 14 23 lj/charmm/coul/long 0.002866 3.617049 0.000434 3.385415 # CC32A # CG331
+pair_coeff 14 24 lj/charmm/coul/long 0.002513 3.590322 0.000434 3.385415 # CC32A # CG3C52
+pair_coeff 14 25 lj/charmm/coul/long 0.004589 3.438869 0.001940 3.340870 # CC32A # NG2R53
+pair_coeff 14 26 lj/charmm/coul/long 0.003555 3.305235 0.001503 2.939966 # CC32A # OG2D1
+pair_coeff 15 15 lj/charmm/coul/long 0.008330 3.144872 0.008330 3.144872 # OC311 # OC311
+pair_coeff 15 18 lj/charmm/coul/long 0.003556 2.766240 0.003556 2.766240 # OC311 # HRA2
+pair_coeff 15 19 lj/charmm/coul/long 0.003556 2.766240 0.003556 2.766240 # OC311 # HGA2
+pair_coeff 15 20 lj/charmm/coul/long 0.002945 2.766240 0.002945 2.766240 # OC311 # HGA3
+pair_coeff 15 21 lj/charmm/coul/long 0.002687 3.532413 0.002687 3.532413 # OC311 # CG2R53
+pair_coeff 15 22 lj/charmm/coul/long 0.004497 3.363142 0.001901 3.265143 # OC311 # CG321
+pair_coeff 15 23 lj/charmm/coul/long 0.005308 3.398778 0.001901 3.265143 # OC311 # CG331
+pair_coeff 15 24 lj/charmm/coul/long 0.004656 3.372051 0.001901 3.265143 # OC311 # CG3C52
+pair_coeff 15 25 lj/charmm/coul/long 0.008500 3.220598 0.008500 3.220598 # OC311 # NG2R53
+pair_coeff 15 26 lj/charmm/coul/long 0.006584 3.086964 0.006584 2.819694 # OC311 # OG2D1
+pair_coeff 18 18 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HRA2 # HRA2
+pair_coeff 18 19 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HRA2 # HGA2
+pair_coeff 18 20 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HRA2 # HGA3
+pair_coeff 18 21 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # HRA2 # CG2R53
+pair_coeff 18 22 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HRA2 # CG321
+pair_coeff 18 23 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # HRA2 # CG331
+pair_coeff 18 24 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # HRA2 # CG3C52
+pair_coeff 18 25 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # HRA2 # NG2R53
+pair_coeff 18 26 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # HRA2 # OG2D1
+pair_coeff 19 19 lj/charmm/coul/long 0.001518 2.387609 0.001518 2.387609 # HGA2 # HGA2
+pair_coeff 19 20 lj/charmm/coul/long 0.001257 2.387609 0.001257 2.387609 # HGA2 # HGA3
+pair_coeff 19 21 lj/charmm/coul/long 0.001147 3.153782 0.001147 3.153782 # HGA2 # CG2R53
+pair_coeff 19 22 lj/charmm/coul/long 0.001920 2.984511 0.000812 2.886512 # HGA2 # CG321
+pair_coeff 19 23 lj/charmm/coul/long 0.002266 3.020147 0.000812 2.886512 # HGA2 # CG331
+pair_coeff 19 24 lj/charmm/coul/long 0.001987 2.993420 0.000812 2.886512 # HGA2 # CG3C52
+pair_coeff 19 25 lj/charmm/coul/long 0.003628 2.841967 0.003628 2.841967 # HGA2 # NG2R53
+pair_coeff 19 26 lj/charmm/coul/long 0.002811 2.708333 0.002811 2.441063 # HGA2 # OG2D1
+pair_coeff 20 20 lj/charmm/coul/long 0.001041 2.387609 0.001041 2.387609 # HGA3 # HGA3
+pair_coeff 20 21 lj/charmm/coul/long 0.000950 3.153782 0.000950 3.153782 # HGA3 # CG2R53
+pair_coeff 20 22 lj/charmm/coul/long 0.001590 2.984511 0.000672 2.886512 # HGA3 # CG321
+pair_coeff 20 23 lj/charmm/coul/long 0.001876 3.020147 0.000672 2.886512 # HGA3 # CG331
+pair_coeff 20 24 lj/charmm/coul/long 0.001646 2.993420 0.000672 2.886512 # HGA3 # CG3C52
+pair_coeff 20 25 lj/charmm/coul/long 0.003005 2.841967 0.003005 2.841967 # HGA3 # NG2R53
+pair_coeff 20 26 lj/charmm/coul/long 0.002328 2.708333 0.002328 2.441063 # HGA3 # OG2D1
+pair_coeff 21 21 lj/charmm/coul/long 0.000867 3.919954 0.000867 3.919954 # CG2R53 # CG2R53
+pair_coeff 21 22 lj/charmm/coul/long 0.001451 3.750684 0.000613 3.652685 # CG2R53 # CG321
+pair_coeff 21 23 lj/charmm/coul/long 0.001712 3.786320 0.000613 3.652685 # CG2R53 # CG331
+pair_coeff 21 24 lj/charmm/coul/long 0.001502 3.759593 0.000613 3.652685 # CG2R53 # CG3C52
+pair_coeff 21 25 lj/charmm/coul/long 0.002742 3.608140 0.002742 3.608140 # CG2R53 # NG2R53
+pair_coeff 21 26 lj/charmm/coul/long 0.002124 3.474505 0.002124 3.207235 # CG2R53 # OG2D1
+pair_coeff 22 22 lj/charmm/coul/long 0.002428 3.581413 0.000434 3.385415 # CG321 # CG321
+pair_coeff 22 23 lj/charmm/coul/long 0.002866 3.617049 0.000434 3.385415 # CG321 # CG331
+pair_coeff 22 24 lj/charmm/coul/long 0.002513 3.590322 0.000434 3.385415 # CG321 # CG3C52
+pair_coeff 22 25 lj/charmm/coul/long 0.004589 3.438869 0.001940 3.340870 # CG321 # NG2R53
+pair_coeff 22 26 lj/charmm/coul/long 0.003555 3.305235 0.001503 2.939966 # CG321 # OG2D1
+pair_coeff 23 23 lj/charmm/coul/long 0.003382 3.652685 0.000434 3.385415 # CG331 # CG331
+pair_coeff 23 24 lj/charmm/coul/long 0.002966 3.625958 0.000434 3.385415 # CG331 # CG3C52
+pair_coeff 23 25 lj/charmm/coul/long 0.005416 3.474505 0.001940 3.340870 # CG331 # NG2R53
+pair_coeff 23 26 lj/charmm/coul/long 0.004195 3.340871 0.001503 2.939966 # CG331 # OG2D1
+pair_coeff 24 24 lj/charmm/coul/long 0.002602 3.599231 0.000434 3.385415 # CG3C52 # CG3C52
+pair_coeff 24 25 lj/charmm/coul/long 0.004750 3.447778 0.001940 3.340870 # CG3C52 # NG2R53
+pair_coeff 24 26 lj/charmm/coul/long 0.003680 3.314144 0.001503 2.939966 # CG3C52 # OG2D1
+pair_coeff 25 25 lj/charmm/coul/long 0.008673 3.296325 0.008673 3.296325 # NG2R53 # NG2R53
+pair_coeff 25 26 lj/charmm/coul/long 0.006718 3.162691 0.006718 2.895421 # NG2R53 # OG2D1
+pair_coeff 26 26 lj/charmm/coul/long 0.005204 3.029056 0.005204 2.494516 # OG2D1 # OG2D1
+
 
 
 special_bonds   charmm
@@ -222,11 +414,15 @@ variable PXX equal pxx
 variable PYY equal pyy
 variable PZZ equal pzz
 
-fix             1 therest nvt temp 433.0 433.0 0.1 fixedpoint 0.0 0.0 0.0
-fix             3 bottomsixlayer setforce 0.0 0.0 0.0
-fix 			thermo_output all print 20 "${STEP} ${PE} ${KE} ${ETOTAL} ${TEMPPARTIAL} ${VOL} ${PRESS} ${LX} ${LZ} ${PXX} ${PYY} ${PZZ}" file thermo.lammps title "# Step PotEng KinEng TotEng Temp Volume Press Lx Lz Pxx Pyy Pzz"
+region interface block 0.0 40.45 0.0 40.45 30.0 50.0
 
-dump		    1 all custom 20 traj_npt.lammpstrj id mol type x y z ix iy iz
+fix             1 therest nvt temp 433.0 433.0 0.1 fixedpoint 0.0 0.0 0.0
+fix             2 therest deposit 1 0 10 12345 region interface mol epd near 3.0 attempt 1000 units box
+WARNING: Molecule has bond topology but no special bond settings (../molecule.cpp:1028)
+fix             3 bottomsixlayer setforce 0.0 0.0 0.0
+fix 			thermo_output all print 10 "${STEP} ${PE} ${KE} ${ETOTAL} ${TEMPPARTIAL} ${VOL} ${PRESS} ${LX} ${LZ} ${PXX} ${PYY} ${PZZ}" file thermo.lammps title "# Step PotEng KinEng TotEng Temp Volume Press Lx Lz Pxx Pyy Pzz"
+
+dump		    1 all custom 10 traj_npt.lammpstrj id mol type x y z ix iy iz
 
 run             100
 PPPM initialization ...
@@ -241,35 +437,40 @@ WARNING: Using a manybody potential with bonds/angles/dihedrals and special_bond
 WARNING: Inconsistent image flags (../domain.cpp:645)
 Memory usage per processor = 81.0211 Mbytes
 Step PotEng KinEng TotEng temppart Volume Press Lx Lz Pxx Pyy Pzz 
-       0   -8204.4739     579.4666   -7625.0073     434.1839    146728.41    93.081674    40.459045    89.439698   -543.08088    446.37846    375.94744 
-20 -8198.49684918034 573.974959103924 -7624.52189007641 430.069106533943 146728.414631066 -1304.20587441979 40.4590449295278 89.4396978316681 -1134.67500807573 -1225.15397477456 -1552.78864040908
-40 -8199.53084517956 575.146373403579 -7624.38447177598 430.946826185721 146728.414631066 -428.41358523096 40.4590449295278 89.4396978316681 106.833821757904 -1233.82920611044 -158.245371340304
-60 -8202.44203535295 578.716075344132 -7623.72596000882 433.621539602771 146728.414631066 -763.613072450759 40.4590449295278 89.4396978316681 -1075.06127094527 -644.935523338764 -570.842423068231
-80 -8201.01624382021 577.865295234815 -7623.1509485854 432.984065379084 146728.414631066 -1172.00441479116 40.4590449295278 89.4396978316681 -752.679974059072 -962.328211008919 -1801.00505930551
-100 -8204.38912931999 581.633012816988 -7622.756116503 435.807148352541 146728.414631066 -158.299762504807 40.4590449295278 89.4396978316681 386.337773079466 -252.30568282277 -608.931377771117
-     100   -8204.3891    581.63301   -7622.7561    435.80715    146728.41   -158.29976    40.459045    89.439698    386.33777   -252.30568   -608.93138 
-Loop time of 14.5002 on 1 procs for 100 steps with 11502 atoms
+       0   -8204.1996     579.4666    -7624.733     434.1839    146728.41    102.81619    40.459045    89.439698   -533.55226    456.05571    385.94511 
+10 -8199.31023430382 574.68366972439 -7624.62656457942 430.600130646582 146728.414631066 -194.284400625752 40.4590449295278 89.4396978316681 -129.217250016755 -295.778674703169 -157.857277157374
+20 -8198.21288061637 573.965295772487 -7624.24758484388 430.061865973617 146728.414631066 -1300.80296560156 40.4590449295278 89.4396978316681 -1130.87949780338 -1221.69469408704 -1549.8347049143
+30 -8200.66011461471 576.543399758905 -7624.1167148558 431.993592890278 146728.414631066 -852.834718549523 40.4590449295278 89.4396978316681 -1666.04630522283 -339.879687157995 -552.57816326781
+40 -8199.22552766435 575.116716987671 -7624.10881067667 430.924605167033 146728.414631066 -432.766841180705 40.4590449295278 89.4396978316681 102.212677035936 -1238.18707862011 -162.326121957953
+50 -8202.78855431423 578.975493403289 -7623.81306091094 433.815916885527 146728.414631066 -1115.54361512923 40.4590449295278 89.4396978316681 -573.941074826136 -1720.85468214827 -1051.83508841324
+60 -8202.13004990356 578.682630257016 -7623.44741964655 433.596479800935 146728.414631066 -766.628397588212 40.4590449295278 89.4396978316681 -1078.19408596852 -646.946443247666 -574.744663548389
+70 -8203.55417571353 580.366791428041 -7623.18738428548 434.858391455082 146728.414631066 -8.84059774918518 40.4590449295278 89.4396978316681 -132.368391462997 -358.151772289135 463.99837050456
+80 -8200.72273228354 577.856258174695 -7622.86647410884 432.977294072583 146728.414631066 -1167.25711447919 40.4590449295278 89.4396978316681 -748.518196842117 -956.60868597383 -1796.64446062162
+90 -8205.76603605547 583.087776385071 -7622.6782596704 436.89717651147 146728.414631066 -756.057321415749 40.4590449295278 89.4396978316681 -726.948703363959 -675.163359641677 -866.059901241557
+100 -8204.08763838663 581.626637872287 -7622.46100051435 435.802371721212 146728.414631066 -156.299766781234 40.4590449295278 89.4396978316681 386.898524660109 -250.525495140598 -605.272329863169
+     100   -8204.0876    581.62664    -7622.461    435.80237    146728.41   -156.29977    40.459045    89.439698    386.89852    -250.5255   -605.27233 
+Loop time of 37.6634 on 1 procs for 100 steps with 11502 atoms
 
-Pair  time (%) = 12.371 (85.3161)
-Bond  time (%) = 0.337208 (2.32553)
-Kspce time (%) = 1.0109 (6.97162)
-Neigh time (%) = 0.596725 (4.11528)
-Comm  time (%) = 0.0226481 (0.156191)
-Outpt time (%) = 0.120499 (0.831015)
-Other time (%) = 0.0412245 (0.284302)
+Pair  time (%) = 12.8016 (33.9896)
+Bond  time (%) = 0.340449 (0.903923)
+Kspce time (%) = 1.02332 (2.71702)
+Neigh time (%) = 1.96455 (5.21606)
+Comm  time (%) = 0.0295072 (0.0783443)
+Outpt time (%) = 0.241046 (0.640001)
+Other time (%) = 21.2629 (56.4551)
 
-FFT time (% of Kspce) = 0.0467593 (4.62551)
-FFT Gflps 3d (1d only) = 1.98499 3.03294
+FFT time (% of Kspce) = 0.0455701 (4.45315)
+FFT Gflps 3d (1d only) = 2.03679 3.01524
 
 Nlocal:    11502 ave 11502 max 11502 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-Nghost:    29476 ave 29476 max 29476 min
+Nghost:    29482 ave 29482 max 29482 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
-Neighs:    4.82959e+06 ave 4.82959e+06 max 4.82959e+06 min
+Neighs:    4.82988e+06 ave 4.82988e+06 max 4.82988e+06 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
 
-Total # of neighbors = 4829590
-Ave neighs/atom = 419.891
+Total # of neighbors = 4829876
+Ave neighs/atom = 419.916
 Ave special neighs/atom = 6.47887
-Neighbor list builds = 3
+Neighbor list builds = 10
 Dangerous builds = 0

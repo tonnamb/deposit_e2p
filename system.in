@@ -388,10 +388,10 @@ variable PZZ equal pzz
 region interface block 0.0 40.45 0.0 40.45 30.0 50.0
 
 fix             1 therest nvt temp 433.0 433.0 0.1 fixedpoint 0.0 0.0 0.0
-fix             2 therest deposit 1 0 10 12345 region interface mol epd near 3.0 attempt 10000 units box
+fix             2 therest deposit 12 0 1000 12345 region interface mol epd near 2.5 attempt 1000 units box
 fix             3 bottomsixlayer setforce 0.0 0.0 0.0
-fix 			thermo_output all print 10 "${STEP} ${PE} ${KE} ${ETOTAL} ${TEMPPARTIAL} ${VOL} ${PRESS} ${LX} ${LZ} ${PXX} ${PYY} ${PZZ}" file thermo.lammps title "# Step PotEng KinEng TotEng Temp Volume Press Lx Lz Pxx Pyy Pzz"
+fix 			thermo_output all print 1000 "${STEP} ${PE} ${KE} ${ETOTAL} ${TEMPPARTIAL} ${VOL} ${PRESS} ${LX} ${LZ} ${PXX} ${PYY} ${PZZ}" file thermo.lammps title "# Step PotEng KinEng TotEng Temp Volume Press Lx Lz Pxx Pyy Pzz"
 
-dump		    1 all custom 10 traj_npt.lammpstrj id mol type x y z ix iy iz
+dump		    1 all custom 1000 traj_npt.lammpstrj id mol type x y z ix iy iz
 
-run             100
+run             15000000

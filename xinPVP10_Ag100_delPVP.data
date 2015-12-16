@@ -1,7 +1,7 @@
 LAMMPS data file via write_data, version 30 Jan 2014, timestep = 2804000
 
 11502 atoms
-16 atom types
+17 atom types
 8394 bonds
 16 bond types
 13536 angles
@@ -33,6 +33,7 @@ Masses
 14 12.011
 15 15.9994
 16 107.868
+17 107.868
 
 Bond Coeffs
 
